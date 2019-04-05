@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=latin-ext" rel="stylesheet">
+
+    <title>paper, stone, scissors game</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class='gameWrapper'>
+
+        <section class="panel-left">
+            <h3>wynik</h3>
+            <p class='me'>Ty: <span data-summary="your-choice"></span></p>
+            <p class='ai'>Ai: <span data-summary="ai-choice"></span></p>
+            <h4><span data-summary="who-win"></span></h4>
+        </section>
+
+        <div class='management'>
+            <section class="select">
+
+                <button data-option="papier" class='selectButton'>
+                    <i class="fas fa-hand-paper"></i>
+                </button>
+
+                <button data-option="kamień" class='selectButton'>
+                    <i class="fas fa-hand-rock"></i>
+                </button>
+
+                <button data-option="nożyczki" class='selectButton'>
+                    <i class="fas fa-hand-scissors"></i>
+                </button>
+
+
+            </section>
+
+            <button class="start">zagraj</button>
+        </div>
+
+
+
+
+
+
+        <section class="panel-right">
+            <h3>statystyki</h3>
+            <p class="numbers">liczba gier: <span>0</span></p>
+            <p class="wins">wygranych: <span>0</span></p>
+            <p class="losses">przegranych: <span>0</span></p>
+            <p class="draws">remisów: <span>0</span></p>
+        </section>
+    </div>
+
+
+
+    <script src="js/Select.js"></script>
+    <script src="js/Draw.js"></script>
+    <script src="js/Result.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
