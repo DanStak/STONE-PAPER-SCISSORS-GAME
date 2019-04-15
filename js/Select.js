@@ -11,20 +11,20 @@ class Select {
 
 
 
-    selectHand = (you = '', ai = '') => {
+    selectHand = (you, ai) => {
         this.selected.you = you;
         this.selected.ai = ai;
 
-    }
+    };
 
     fillTableStats = (you, ai, result) => {
         const table = {
             you,
             ai,
-            result
+            result,
         }
         this.tableOfGames.push(table);
-    }
+    };
 
     countStats = () => {
         let games = this.tableOfGames.length;
@@ -33,5 +33,5 @@ class Select {
         let draw = this.tableOfGames.filter(table => table.result === 'draw').length;
 
         return [games, wins, loses, draw];
-    }
+    };
 }

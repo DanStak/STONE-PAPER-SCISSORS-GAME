@@ -39,18 +39,20 @@ class Game {
         this.buttons.forEach(button => button.style.border = '');
         this.select.selected.you = '';
         this.select.selected.ai = '';
-    }
+    };
 
     start = (e) => {
 
         const you = e.target.dataset.option;
+        this.buttons.forEach(button => button.style.backgroundColor = 'transparent');
         e.target.style.backgroundColor = '#009D50';
         const ai = this.draw.drawHand();
 
         this.select.selectHand(you, ai);
 
+        console.log('działa');
 
-    }
+    };
 
     letsPlay = () => {
 
@@ -61,9 +63,12 @@ class Game {
         const result = Result.checkWinner(you, ai);
         this.select.fillTableStats(you, ai, result);
         Result.showWinner(result);
-
-        this.render(you, ai, result, this.select.countStats());
         this.buttons.forEach(button => button.style.backgroundColor = 'transparent');
 
-    }
+
+        this.render(you, ai, result, this.select.countStats());
+
+    };
 }
+
+

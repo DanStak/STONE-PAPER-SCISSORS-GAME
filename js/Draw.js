@@ -11,5 +11,5 @@ class Draw {
 
         hand = this.options[index];
         return hand;
-    }
+    };
 }
