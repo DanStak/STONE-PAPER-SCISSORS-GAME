@@ -4,7 +4,7 @@ class Draw {
 
     }
 
-    drawHand = () => {
+    drawHand() {
         let hand;
 
         const index = Math.floor(Math.random() * this.options.length);

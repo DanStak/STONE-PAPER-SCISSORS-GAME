@@ -4,7 +4,7 @@ class Game {
         this.select = new Select();
         this.draw = new Draw();
 
-        [...document.querySelectorAll('.select button')].forEach(button => button.addEventListener('click', this.start));
+        [...document.querySelectorAll('.select button')].forEach(button => button.addEventListener('click', this.start.bind(this)));
 
         document.querySelector('button.start').addEventListener('click', this.letsPlay.bind(this));
 
@@ -22,7 +22,7 @@ class Game {
 
     }
 
-    render = (you = '', ai = '', result = '', stats = [0, 0, 0, 0]) => {
+    render(you = '', ai = '', result = '', stats = [0, 0, 0, 0]) {
         this.yourChoice.textContent = you;
         this.aiChoice.textContent = ai;
 
@@ -41,8 +41,8 @@ class Game {
         this.select.selected.ai = '';
     };
 
-    start = (e) => {
-
+    start(e) {
+        console.log(this.buttons);
         const you = e.target.dataset.option;
         this.buttons.forEach(button => button.style.backgroundColor = 'transparent');
         e.target.style.backgroundColor = '#009D50';
@@ -54,7 +54,7 @@ class Game {
 
     };
 
-    letsPlay = () => {
+    letsPlay() {
 
         if (this.select.selected.you === '') return alert("Wybierz dłoń!");
 
@@ -71,4 +71,4 @@ class Game {
     };
 }
 
-
+const game = new Game();
